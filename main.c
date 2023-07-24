@@ -28,7 +28,7 @@ if(inp==b){
 
 }
 else{
-    printf("you have only %d life left \n",try);
+    printf("you have only %d life left \n",try-1);
     try--;
 }
 if(try==0){
