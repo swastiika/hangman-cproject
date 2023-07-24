@@ -4,7 +4,7 @@
 
 int main ()
 {
-// this is only the outlook how the game should word with a fixed word not the final code
+// this is only the outlook how the game should word with a fixed word not the final code can add a random word of any length 
 printf("\t HANG-MAN \n ");
 
 int i ,j,k;
@@ -37,16 +37,4 @@ if(try==0){
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 }
