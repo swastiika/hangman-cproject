@@ -37,9 +37,9 @@ while(line==0&&fscanf(fp,"%s",word)==1){
 
             strcpy(guss,word);
                len=strlen(word);
-            printf("\t%c",guss[0]);
-            for(i=0;i<len-2;i++){printf("\t%c",emp);}
-            printf("\t%c",guss[len-1]);
+            printf("\t\t%c",guss[0]);
+            for(i=0;i<len-2;i++){printf("\t\t%c",emp);}
+            printf("\t\t%c",guss[len-1]);
             printf("\n");
             break; 
         }
@@ -54,9 +54,10 @@ char filled[100];
 
 
 
-printf("\t Enter the guess the character\n");
+printf("\t\t Enter the guess the character\n");
 int correct_guess;
 while (try != 0) {
+    printf("\t\t");
     
     scanf("\t %c", &ans);
 
@@ -64,16 +65,16 @@ while (try != 0) {
 
     for (i = 1; i < len - 1; i++) {
         if (ans == guss[i]) {
-            printf("\tyou are correct\n");
+            printf("\t\tyou are correct\n");
             correct_guess =  1; 
             filled[i] = ans;
         }
     }
-            printf("\t%c", guss[0]);
+            printf("\t\t%c", guss[0]);
         for (i = 1; i < len - 1; i++) {
-            printf("\t%c", filled[i] != emp ? filled[i] : emp);
+            printf("\t\t%c", filled[i] != emp ? filled[i] : emp);
         }
-          printf("\t%c\n", guss[len - 1]);
+          printf("\t\t%c\n", guss[len - 1]);
               int fully_guessed = 1;
         for (i = 1; i < len - 1; i++) {
             if (filled[i] == emp) {
@@ -83,16 +84,17 @@ while (try != 0) {
         }
 
         if (fully_guessed) {
-            printf("\tCongratulations! You guessed the word correctly!\n");
+            printf("\t\tCongratulations! You guessed the word correctly!\n");
             break;
         }
 
         if (!correct_guess) {
             try--;
-            printf("\tyou have only %d life left\n", try);
+            printf("\t\tyou have only %d life left\n", try);
         }
     }
-
+        if(try==0)
+        printf("\t\tYOU ARE HANGEDDD\n");
     return 0;
 }
 
