@@ -47,38 +47,53 @@ while(line==0&&fscanf(fp,"%s",word)==1){
         index++;
 
 }
-
+char filled[100];
+    for (i = 1; i < len - 1; i++) {
+        filled[i] = emp;
+    }
 printf("Enter the guess the character\n");
 
 
 
-while(try!=0){
-  scanf(" %c",&ans);
-          for(i=1;i<len-1;i++){
-                             
-                            if (ans == guss[i]) {
-                                 printf("you are correct\n");
-                                printf("%c", guss[0]);
-        
-                                  for (j = 1; j < len - 1; j++) {
-                                           if (guss[j] == ans) {
-                                          printf("%c", ans);
-                                    } else {
-                                       printf("%c", emp);
-                                       }
-                                    }
-        
-                                         printf("%c\n", guss[len - 1]);
-                                             break;
-                            
-                            }
-                            else{
-                              try--;
-                              printf("you have only %d life left \n",try);
-                              break;
-                            }
-                            
-                  }
+int correct_guess;
+while (try != 0) {
+    printf("Enter the guess the character\n");
+    scanf(" %c", &ans);
 
-          }
+    correct_guess = 0; 
+
+    for (i = 1; i < len - 1; i++) {
+        if (ans == guss[i]) {
+            printf("you are correct\n");
+            correct_guess =  1; 
+            filled[i] = ans;
+        }
+    }
+            printf("%c", guss[0]);
+        for (i = 1; i < len - 1; i++) {
+            printf("%c", filled[i] != emp ? filled[i] : emp);
+        }
+          printf("%c\n", guss[len - 1]);
+              int fully_guessed = 1;
+        for (i = 1; i < len - 1; i++) {
+            if (filled[i] == emp) {
+                fully_guessed = 0;
+                break;
+            }
+        }
+
+        if (fully_guessed) {
+            printf("Congratulations! You guessed the word correctly!\n");
+            break;
+        }
+
+        if (!correct_guess) {
+            try--;
+            printf("you have only %d life left\n", try);
+        }
+    }
+
+    return 0;
 }
+
+
