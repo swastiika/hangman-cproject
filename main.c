@@ -4,8 +4,15 @@
 #include<time.h>
 int main ()
 {
-// this is only the outlook how the game should word with a fixed word not the final code can add a random word of any length 
-printf("\t HANG-MAN \n ");
+ printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\n");
+      printf("#    #       *      # *    #    ########   #           #     *        #*      #  				    \n");
+      printf("#    #     *  *     #  *   #     #         #  #     #  #    *  *      #*      #    				\n");
+      printf("#    #    *    *    #   *  #    #          #   #   #   #   *    *     #  *    #   \n");
+      printf("######    *******   #    * #    #  #####   #      #    #   *******    #   *   #	 		            \n");
+      printf("#    #    #     #   #     *#    #      #   #           #   *     *    #    *  # 				        \n");
+      printf("#    #    #     #   #     *#    #      #   #           #   *     *    #      *#			        \n");
+      printf("#    #    #     #   #      #    ########   #           #   *     *    #       #    		            \n");
+      printf("\n\n                                  WELCOME TO HANGMAN GAME\n");
 
 int i ,j,k;
 int mistake=0 , errors=0, try=3, ans=0;
