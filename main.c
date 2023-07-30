@@ -13,9 +13,11 @@ int main ()
       printf("#    #    #     #   #     *#    #      #   #           #   *     *    #      *#			        \n");
       printf("#    #    #     #   #      #    ########   #           #   *     *    #       #    		            \n");
       printf("\n\n                                  WELCOME TO HANGMAN GAME\n");
+      printf("-----------------------------------------------------------------------------------\n");
 
 int i ,j,k;
-int mistake=0 , errors=0, try=3, ans=0;
+int mistake=0 , errors=0, try=3;
+char ans;
 int line=0;
 int index=1;
 char word[100];
@@ -24,7 +26,7 @@ char inp[100];
 int len;
 char guss[100];
  srand(time(0));
- int random = rand() % 4 + 1;
+ int random = rand() % 84 + 1;
 
 FILE *fp;
 
@@ -35,39 +37,48 @@ while(line==0&&fscanf(fp,"%s",word)==1){
 
             strcpy(guss,word);
                len=strlen(word);
-           //     printf("%d",len);
-           // printf("%s\n",  word); // generating random word 
             printf("%c",guss[0]);
             for(i=0;i<len-2;i++){printf("%c",emp);}
             printf("%c",guss[len-1]);
             printf("\n");
-            break; // Break after processing the first line
+            break; 
         }
 
         index++;
 
 }
 
-//printf("%c %c %c \n",word[0],emp,word[2]); // can be used loop for printing in final program
-//printf("enter the missing letter:\n");
-
-//while(try!=0){
-  //  scanf(" %c",&inp);
-//if(inp==b){
-  //                  ans++;
-    //                printf("you are safe form hanging\n");
-      //              return 0;
+printf("Enter the guess the character\n");
 
 
-//}
-//else{
-  //  printf("you have only %d life left \n",try-1);
-    //try--;
-//}
-//if(try==0){
-  //              printf("\n the game is over: you are hanged \n");
 
-//}
+while(try!=0){
+  scanf(" %c",&ans);
+          for(i=1;i<len-1;i++){
+                             
+                            if (ans == guss[i]) {
+                                 printf("you are correct\n");
+                                printf("%c", guss[0]);
+        
+                                  for (j = 1; j < len - 1; j++) {
+                                           if (guss[j] == ans) {
+                                          printf("%c", ans);
+                                    } else {
+                                       printf("%c", emp);
+                                       }
+                                    }
+        
+                                         printf("%c\n", guss[len - 1]);
+                                             break;
+                            
+                            }
+                            else{
+                              try--;
+                              printf("you have only %d life left \n",try);
+                              break;
+                            }
+                            
+                  }
 
-//}
+          }
 }
