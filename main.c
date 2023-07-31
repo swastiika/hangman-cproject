@@ -18,6 +18,7 @@ int main ()
 int i ,j,k;
 int mistake=0 , errors=0, try=3;
 char ans;
+char re;
 int line=0;
 int index=1;
 char word[100];
@@ -31,6 +32,7 @@ char guss[100];
 FILE *fp;
 
 fp= fopen("word.txt","r");
+start:
 while(line==0&&fscanf(fp,"%s",word)==1){
     
         if (index == random ) {
@@ -85,17 +87,33 @@ while (try != 0) {
 
         if (fully_guessed) {
             printf("\t\tCongratulations! You guessed the word correctly!\n");
+
             break;
+            printf("Do you want to play again\n ");
+            printf("press Y for yes and N for no ");
+            scanf("%c",&re);
+            if(re=='y' || re=='Y'){
+                try =3;
+                 goto start ;
+            }
         }
+
 
         if (!correct_guess) {
             try--;
             printf("\t\tyou have only %d life left\n", try);
         }
     }
-        if(try==0)
+        if(try==0){
         printf("\t\tYOU ARE HANGEDDD\n");
-    return 0;
+         printf("Do you want to play again\n ");
+            printf("press Y for yes and N for no\n ");
+            scanf(" %c",&re);
+            if(re=='y' || re=='Y'){
+                try=3;
+             goto start ;
+            }
+        }
 }
 
 
