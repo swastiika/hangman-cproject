@@ -88,14 +88,17 @@ while (try != 0) {
         if (fully_guessed) {
             printf("\t\tCongratulations! You guessed the word correctly!\n");
 
-            break;
+            
             printf("Do you want to play again\n ");
             printf("press Y for yes and N for no ");
-            scanf("%c",&re);
+            scanf(" %c",&re);
             if(re=='y' || re=='Y'){
                 try =3;
                  goto start ;
             }
+                 else
+                 break ;
+            
         }
 
 
