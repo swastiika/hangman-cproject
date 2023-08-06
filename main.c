@@ -16,7 +16,7 @@ int main ()
       printf("-----------------------------------------------------------------------------------\n");
 
 int i ,j,k;
-int mistake=0 , errors=0, try=3;
+int mistake=0 , errors=0, try=5;
 char ans;
 char re;
 int line=0;
@@ -93,7 +93,7 @@ while (try != 0) {
             printf("press Y for yes and N for no ");
             scanf(" %c",&re);
             if(re=='y' || re=='Y'){
-                try =3;
+                try =5;
                  goto start ;
             }
                  else
@@ -105,15 +105,76 @@ while (try != 0) {
         if (!correct_guess) {
             try--;
             printf("\t\tyou have only %d life left\n", try);
+            switch (try)
+            {
+
+                case 0:
+                {    
+                printf("______________________\n");
+                printf("|"); printf("  ");
+                printf("O\n");
+                printf("| /|\\  \n");
+                printf("| / \\  \n");
+                printf("| \n");
+                break;
+                }
+                case 1:
+                {
+                printf("______________________\n");
+                printf("|"); printf("  ");
+                printf("O\n");
+                printf("| /|\\  \n");
+                printf("| /\n");
+                printf("| \n");
+                break;
+            }
+                case 2:
+                {
+                printf("______________________\n");
+                printf("|"); printf("  ");
+                printf("O\n");
+                printf("| /|\\ \n");
+                printf("| \n");
+                printf("| \n");
+                break;
+                }
+                case 3:
+                {
+                printf("______________________\n");
+                printf("|"); printf("  ");
+                printf("O\n");
+                printf("|"); printf(" "); printf("/\\ \n");
+                printf("| \n");
+                printf("| \n");
+                break;
+                }
+                case 4:
+                {
+            
+                printf("______________________\n");
+                printf("|"); printf("  ");
+                printf("O\n");
+                printf("| \n");
+                printf("| \n");
+                printf("| \n");
+                break;
+
+                }                
+                default:
+                {
+                    break;
+                }
+            }
         }
     }
         if(try==0){
         printf("\t\tYOU ARE HANGEDDD\n");
-         printf("Do you want to play again\n ");
+        printf("The correct word was:%s. \n",word);
+         printf("Do you want to play again?\n ");
             printf("press Y for yes and N for no\n ");
             scanf(" %c",&re);
             if(re=='y' || re=='Y'){
-                try=3;
+                try=5;
              goto start ;
             }
         }
