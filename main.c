@@ -6,7 +6,7 @@ int main ()
 {
  printf("\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\n");
       printf("#    #       *      # *    #    ########   #           #     *        #*      #  				    \n");
-      printf("#    #     *  *     #  *   #     #         #  #     #  #    *  *      #*      #    				\n");
+      printf("#    #     *  *     #  *   #    #          #  #     #  #    *  *      #*      #    				\n");
       printf("#    #    *    *    #   *  #    #          #   #   #   #   *    *     #  *    #   \n");
       printf("######    *******   #    * #    #  #####   #      #    #   *******    #   *   #	 		            \n");
       printf("#    #    #     #   #     *#    #      #   #           #   *     *    #    *  # 				        \n");
@@ -28,47 +28,37 @@ int len;
 char guss[100];
  srand(time(0));
  int random = rand() % 84 + 1;
-
 FILE *fp;
-
 fp= fopen("word.txt","r");
 start:
 while(line==0&&fscanf(fp,"%s",word)==1){
-    
-        if (index == random ) {
 
+        if (index == random ) {
             strcpy(guss,word);
                len=strlen(word);
             printf("\t\t%c",guss[0]);
             for(i=0;i<len-2;i++){printf("\t\t%c",emp);}
             printf("\t\t%c",guss[len-1]);
             printf("\n");
-            break; 
+            break;
         }
-
         index++;
-
 }
 char filled[100];
     for (i = 1; i < len - 1; i++) {
         filled[i] = emp;
     }
-
-
-
 printf("\t\t Enter the guess the character\n");
 int correct_guess;
 while (try != 0) {
     printf("\t\t");
-    
+
     scanf("\t %c", &ans);
-
-    correct_guess = 0; 
-
+    correct_guess = 0;
     for (i = 1; i < len - 1; i++) {
         if (ans == guss[i]) {
             printf("\t\tyou are correct\n");
-            correct_guess =  1; 
+            correct_guess =  1;
             filled[i] = ans;
         }
     }
@@ -84,11 +74,9 @@ while (try != 0) {
                 break;
             }
         }
-
         if (fully_guessed) {
             printf("\t\tCongratulations! You guessed the word correctly!\n");
 
-            
             printf("Do you want to play again\n ");
             printf("press Y for yes and N for no ");
             scanf(" %c",&re);
@@ -98,68 +86,70 @@ while (try != 0) {
             }
                  else
                  break ;
-            
+
         }
-
-
         if (!correct_guess) {
             try--;
             printf("\t\tyou have only %d life left\n", try);
             switch (try)
             {
 
-                case 0:
-                {    
-                printf("______________________\n");
-                printf("|"); printf("  ");
-                printf("O\n");
-                printf("| /|\\  \n");
-                printf("| / \\  \n");
-                printf("| \n");
+                case 4:
+                {
+                printf("      ______________\n");
+                printf("      |            |\n");
+                printf("      |            O\n");
+                printf("      |              \n");
+                printf("      |               \n");
+                printf("      |               \n");
+                printf("   ___|___            \n");
+                break;
+
+                }
+                case 3:
+                {
+                printf("      ______________\n");
+                printf("      |            | \n");
+                printf("      |            O\n");
+                printf("      |            | \n");
+                printf("      |               \n");
+                printf("      |               \n");
+                printf("   ___|___            \n");
+                break;
+                }
+                case 2:
+                {
+                printf("      ______________\n");
+                printf("      |            | \n");
+                printf("      |            O\n");
+                printf("      |           /|\\\n");
+                printf("      |               \n");
+                printf("      |               \n");
+                printf("   ___|___            \n");
                 break;
                 }
                 case 1:
                 {
-                printf("______________________\n");
-                printf("|"); printf("  ");
-                printf("O\n");
-                printf("| /|\\  \n");
-                printf("| /\n");
-                printf("| \n");
-                break;
-            }
-                case 2:
-                {
-                printf("______________________\n");
-                printf("|"); printf("  ");
-                printf("O\n");
-                printf("| /|\\ \n");
-                printf("| \n");
-                printf("| \n");
+                printf("      ______________\n");
+                printf("      |            | \n");
+                printf("      |            O\n");
+                printf("      |           /|\\\n");
+                printf("      |           / \n");
+                printf("      |               \n");
+                printf("   ___|___            \n");
                 break;
                 }
-                case 3:
+                case 0:
                 {
-                printf("______________________\n");
-                printf("|"); printf("  ");
-                printf("O\n");
-                printf("|"); printf(" "); printf("/\\ \n");
-                printf("| \n");
-                printf("| \n");
+                printf("      ______________\n");
+                printf("      |            | \n");
+                printf("      |           O_\n");
+                printf("      |           /|\\\n");
+                printf("      |           / \\\n");
+                printf("      |               \n");
+                printf("   ___|___            \n");
                 break;
                 }
-                case 4:
-                {
-            
-                printf("______________________\n");
-                printf("|"); printf("  ");
-                printf("O\n");
-                printf("| \n");
-                printf("| \n");
-                printf("| \n");
-                break;
-
-                }                
                 default:
                 {
                     break;
@@ -179,5 +169,3 @@ while (try != 0) {
             }
         }
 }
-
-
